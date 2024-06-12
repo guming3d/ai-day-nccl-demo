@@ -2,7 +2,7 @@
 
 ## Clone this repo to your local terminal or VM
 ```
-git clone https://github.com/guming3d/2024-AI-GBB-Bootcamp.git
+git clone https://github.com/guming3d/ai-day-nccl-demo.git
 ```
 
 ## Install AML Python SDK v2 in a conda env
@@ -23,9 +23,9 @@ pip install azure-identity
 ## Create Azure container registry
 - Create an Azure Container Registry (ACR)
 ```bash
-export ACR_RG=JZ-ACR
-export ACR_NAME=jzacr4
-export LOCATION=francecentral
+export ACR_RG=<Resource Group Name>  #your resource group name
+export ACR_NAME=<Azure Container Registry Name> #The target Azure Container Registry name
+export LOCATION=<region name> #target region name for Azure Machine learning workspace
 ```
 ```bash
 az group create --name $ACR_RG --location $LOCATION
@@ -65,18 +65,18 @@ Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1050-azure x86_64)
 ```
 
 **NOTE**: In script `3_create_cluster.py`, if the `min_instances` == `max_instances` == 2, I got the following error scaling:  
-![image](https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp/assets/6353250/1ac5a4b3-209f-4146-b619-1ac790c57e16)
+![image](https://github.com/guming3d/ai-day-nccl-demo/assets/6353250/1ac5a4b3-209f-4146-b619-1ac790c57e16)
 
-## Create NCCL test container (from AML compute node)
+## Create NCCL test container (from AML compute node or your local laptop)
 ```bash
 $ sudo su -
 # az login
 # az account set --subscription 0988137f-9fcd-4e36-b99f-e5b3f35b28db
-# az acr login --name jzacr3
+# az acr login --name minggu
 Login Succeeded
 ```
 ```bash
-# git clone https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp.git
+# git clone https://github.com/guming3d/ai-day-nccl-demo.git
 # cd 2024-AI-GBB-Bootcamp/Docker/
 # docker build -t jzacr3.azurecr.io/aml_nccl_tests_2303:latest .
 # docker push jzacr3.azurecr.io/aml_nccl_tests_2303:latest

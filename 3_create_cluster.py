@@ -57,7 +57,7 @@ elif args.cluster:
         ssh_settings=cluster_ssh,
         min_instances=0,
         max_instances=2,
-        idle_time_before_scale_down=3600,
+        idle_time_before_scale_down=900,
         identity=identity_config)
 
     operation = ml_client.begin_create_or_update(cluster_basic)
