@@ -13,10 +13,10 @@ cluster_name = os.getenv('CLUSTER_NAME')
 ml_client = MLClient(DefaultAzureCredential(), subscription_id, resource_group, work_space)
 
 # Define Docker image for the custom environment
-env_name = "NCCL-Benchmark-Env"
+env_name = "NCCL-Benchmark-Env-New"
 custom_env = Environment(
     name=env_name,
-    image='jzacr3.azurecr.io/aml_nccl_tests_2303:latest',
+    image='nccla100minggu.azurecr.io/aml_nccl_tests_2303:latest',
     version="1.0",
 )
 

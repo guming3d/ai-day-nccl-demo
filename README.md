@@ -2,7 +2,7 @@
 
 ## Clone this repo to your local terminal or VM
 ```
-git clone https://github.com/JZ-Azure/2024-AI-GBB-Bootcamp.git
+git clone https://github.com/guming3d/2024-AI-GBB-Bootcamp.git
 ```
 
 ## Install AML Python SDK v2 in a conda env
